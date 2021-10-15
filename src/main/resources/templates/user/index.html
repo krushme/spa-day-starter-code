@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<h1 th:text="'Welcome ' + ${user.username}">congratulations</h1>
+
+
+<a th:href="@{/}">Go Back Home</a>
+
+<ul>
+    <th:block th:each="user1 : ${users}">
+<!--        <li th:text="${user1.username}"></li>-->
+        <a th:href="@{/user/userList/{id}(id=${user1.id})}" th:text="${user1.username}">userInfo</a>
+    </th:block>
+</ul>
+
+</body>
+</html>
